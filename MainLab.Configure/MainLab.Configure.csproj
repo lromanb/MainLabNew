@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{847854C5-B995-424C-B193-286E06BF6FC3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MainLab.Configure</RootNamespace>
+    <AssemblyName>MainLab.Configure</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=5.1.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.5.1.2\lib\net461\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CompositionRoot.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MainLab.BusinessService.Interface\MainLab.BusinessService.Interface.csproj">
+      <Project>{41fb3676-a437-4207-87b0-a198a614fbdf}</Project>
+      <Name>MainLab.BusinessService.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MainLab.BusinessService\MainLab.BusinessService.csproj">
+      <Project>{1f7b48b7-0d32-4154-b14b-b8dd8c734dfb}</Project>
+      <Name>MainLab.BusinessService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MainLab.DataAccess.Interface\MainLab.DataAccess.Interface.csproj">
+      <Project>{ff82f895-fd23-4706-a634-4e299729d78e}</Project>
+      <Name>MainLab.DataAccess.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MainLab.DataAccess\MainLab.DataAccess.csproj">
+      <Project>{57be40f6-16c1-4ce0-bf1e-8161ed97f182}</Project>
+      <Name>MainLab.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MainLab.Logger.Interface\MainLab.Logger.Interface.csproj">
+      <Project>{fea5cbe0-32c2-474d-8a48-41207ae38883}</Project>
+      <Name>MainLab.Logger.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MainLab.Logger\MainLab.Logger.csproj">
+      <Project>{0c385616-110a-403c-a781-e2594924703d}</Project>
+      <Name>MainLab.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MainLab.SecurityLayer.Interface\MainLab.SecurityLayer.Interface.csproj">
+      <Project>{366182ac-0962-4234-bbd6-5a289131adad}</Project>
+      <Name>MainLab.SecurityLayer.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MainLab.SecurityLayer\MainLab.SecurityLayer.csproj">
+      <Project>{29626eac-6dba-4177-b28c-4fe03b1d129b}</Project>
+      <Name>MainLab.SecurityLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
